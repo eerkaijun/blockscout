@@ -41,10 +41,10 @@ services:
     links:
       - db:database
     environment:
-        ETHEREUM_JSONRPC_HTTP_URL: http://host.docker.internal:8545/
-        ETHEREUM_JSONRPC_TRACE_URL: http://host.docker.internal:8545/
-        ETHEREUM_JSONRPC_WS_URL: ws://host.docker.internal:8545/
-        CHAIN_ID: '1337'
+        ETHEREUM_JSONRPC_HTTP_URL: http://188.214.131.8:8545/
+        ETHEREUM_JSONRPC_TRACE_URL: http://188.214.131.8:8545/
+        ETHEREUM_JSONRPC_WS_URL: ws://188.214.131.8:8545/ws/
+        CHAIN_ID: '1'
 
   visualizer:
     extends:
@@ -92,3 +92,8 @@ services:
     extends:
       file: ./services/nginx.yml
       service: proxy
+
+volumes:
+  db_data:
+  stats_data:
+  redis_data:
